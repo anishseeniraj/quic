@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class CreateActivity extends Component {
   constructor(props) {
@@ -9,9 +9,9 @@ export default class CreateActivity extends Component {
       username: "",
       contact: "",
       activity: "",
-      age: "",
+      age: 0,
       location: "",
-    }
+    };
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeContact = this.onChangeContact.bind(this);
@@ -23,114 +23,122 @@ export default class CreateActivity extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
-    })
+      username: e.target.value,
+    });
   }
 
   onChangeContact(e) {
     this.setState({
-      contact: e.target.value
-    })
+      contact: e.target.value,
+    });
   }
 
   onChangeActivity(e) {
     this.setState({
-      activity: e.target.value
-    })
+      activity: e.target.value,
+    });
   }
 
   onChangeAge(e) {
     this.setState({
-      age: e.target.value
-    })
+      age: e.target.value,
+    });
   }
 
   onChangeLocation(e) {
+    console.log(e.target.value);
+
     this.setState({
-      location: e.target.value
-    })
+      location: e.target.value,
+    });
   }
 
   onSubmit(e) {
     e.preventDefault();
 
-    const exercise = {
+    const activity = {
       username: this.state.username,
       contact: this.state.contact,
       activity: this.state.activity,
       age: this.state.age,
-      location: this.state.location
-    }
+      location: this.state.location,
+    };
 
-    console.log(exercise);
+    console.log(activity);
 
-    axios.post('http://localhost:5000/exercises/add', exercise)
-      .then(res => console.log(res.data));
+    axios
+      .post("http://localhost:5000/activities/add", activity)
+      .then((res) => console.log(res.data));
 
-    window.location = '/';
+    window.location = "/";
   }
 
   render() {
     return (
-    <div>
-      <h3>Create New Activity</h3>
-      <form onSubmit={this.onSubmit}>
-
-        <div className="form-group"> 
-          <label>Username: </label>
-          <input type="text"
+      <div>
+        <h3>Create New Activity</h3>
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <label>Username: </label>
+            <input
+              type="text"
               required
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}
-              />
-        </div>
+            />
+          </div>
 
-        <div className="form-group"> 
-          <label>Contact: </label>
-          <input type="text"
+          <div className="form-group">
+            <label>Contact: </label>
+            <input
+              type="text"
               required
               className="form-control"
               value={this.state.contact}
               onChange={this.onChangeContact}
-              />
-        </div>
+            />
+          </div>
 
-        <div className="form-group">
-          <label>Activity: </label>
-          <input 
-              type="text" 
+          <div className="form-group">
+            <label>Activity: </label>
+            <input
+              type="text"
               className="form-control"
               value={this.state.activity}
               onChange={this.onChangeActivity}
-              />
-        </div>
+            />
+          </div>
 
-        <div className="form-group">
-          <label>Age </label>
-          <input 
-              type="text" 
+          <div className="form-group">
+            <label>Age </label>
+            <input
+              type="text"
               className="form-control"
               value={this.state.age}
               onChange={this.onChangeAge}
-              />
-        </div>
+            />
+          </div>
 
-        <div className="form-group">
-          <label>Location: </label>
-          <input 
-              type="text" 
+          <div className="form-group">
+            <label>Location: </label>
+            <input
+              type="text"
               className="form-control"
               value={this.state.location}
               onChange={this.onChangeLocation}
-              />
-        </div>
+            />
+          </div>
 
-        <div className="form-group">
-          <input type="submit" value="Create New Activity" className="btn btn-primary" />
-        </div>
-      </form>
-    </div>
-    )
+          <div className="form-group">
+            <input
+              type="submit"
+              value="Create New Activity"
+              className="btn btn-primary"
+            />
+          </div>
+        </form>
+      </div>
+    );
   }
 }

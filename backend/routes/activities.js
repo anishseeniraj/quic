@@ -16,6 +16,12 @@ router.route("/add").post((req, res) => {
   const age = req.body.age;
   const location = req.body.location;
 
+  console.log(username);
+  console.log(contact);
+  console.log(activity);
+  console.log(age);
+  console.log(location);
+
   const newActivity = new Activity({
     username,
     contact,
