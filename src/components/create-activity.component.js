@@ -64,7 +64,7 @@ export default class CreateActivity extends Component {
       location: this.state.location,
     };
 
-    console.log(activity);
+    // console.log(activity);
 
     axios
       .post("http://localhost:5000/activities/add", activity)
