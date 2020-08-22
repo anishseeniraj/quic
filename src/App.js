@@ -15,7 +15,6 @@ function App() {
         <br />
         <Route path="/" exact component={ActivitiesList} />
         <Route path="/create" component={CreateActivity} />
-        <Route path="/:id" component={ViewActivity} />
       </div>
     </Router>
   );
