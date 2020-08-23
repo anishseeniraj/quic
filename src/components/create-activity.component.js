@@ -9,8 +9,10 @@ export default class CreateActivity extends Component {
       username: "",
       contact: "",
       activity: "",
-      age: 0,
+      age: "",
       location: "",
+      latitude: 0,
+      longitude: 0,
     };
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
@@ -19,6 +21,18 @@ export default class CreateActivity extends Component {
     this.onChangeAge = this.onChangeAge.bind(this);
     this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      });
+
+      console.log(position.coords.latitude);
+      console.log(position.coords.longitude);
+    });
   }
 
   onChangeUsername(e) {
@@ -46,8 +60,6 @@ export default class CreateActivity extends Component {
   }
 
   onChangeLocation(e) {
-    console.log(e.target.value);
-
     this.setState({
       location: e.target.value,
     });
@@ -62,6 +74,8 @@ export default class CreateActivity extends Component {
       activity: this.state.activity,
       age: this.state.age,
       location: this.state.location,
+      latitude: this.state.latitude,
+      longitude: this.state.longitude,
     };
 
     // console.log(activity);

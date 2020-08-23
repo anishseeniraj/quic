@@ -15,6 +15,8 @@ router.route("/add").post((req, res) => {
   const activity = req.body.activity;
   const age = req.body.age;
   const location = req.body.location;
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
 
   const newActivity = new Activity({
     username,
@@ -22,6 +24,8 @@ router.route("/add").post((req, res) => {
     activity,
     age,
     location,
+    latitude,
+    longitude,
   });
 
   console.log(newActivity);

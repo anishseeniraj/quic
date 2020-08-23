@@ -7,6 +7,8 @@ const activitySchema = new Schema({
   activity: { type: String, required: true, trim: true },
   age: { type: Number, required: true },
   location: { type: String, required: true, trim: true },
+  latitude: { type: Number, required: true },
+  longitude: { type: Number, required: true },
 });
 const Activity = mongoose.model("Activity", activitySchema);
 
