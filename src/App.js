@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar.component";
 import ActivitiesList from "./components/activities-list.component";
 import CreateActivity from "./components/create-activity.component";
-import ViewActivity from "./components/view-activity.component";
 
 function App() {
   return (
