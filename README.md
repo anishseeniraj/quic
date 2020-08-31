@@ -2,15 +2,15 @@
 
 Ever craved to indulge in an activity that none of your friends were up for? Worry not, for Quic lets you instantly link up with someone who is looking to partake in a similar activity as you!
 
-<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/home.jpg" width=500 height=500 align="middle" alt="Home">
+<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/home.jpg" align="middle" alt="Home">
 
 <br><hr>
 
-<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/form.jpg" width=500 height=500 align="middle" alt="Form">
+<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/form.jpg" align="middle" alt="Form">
 
 <br><hr>
 
-<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/view.jpg" width=500 height=500 align="middle" alt="View">
+<img src="https://github.com/anishseeniraj/quic/blob/master/src/assets/img/view.jpg" align="middle" alt="View">
 
 ## Table of Contents
 
