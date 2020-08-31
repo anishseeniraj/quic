@@ -1,24 +1,37 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-
+ 
 const Activity = (props) => (
   <tr>
-    <td>{props.activity.username}</td>
+    <td>
+      <Link
+        to={
+          "/view/" +
+          props.activity._id +
+          "/" +
+          props.activity.latitude +
+          "/" +
+          props.activity.longitude
+        }
+      >
+        {props.activity.username}
+      </Link>
+    </td>
     <td>{props.activity.contact}</td>
     <td>{props.activity.activity}</td>
     <td>{props.activity.age}</td>
     <td>{props.activity.location}</td>
   </tr>
 );
-
+ 
 export default class ActivitiesList extends Component {
   constructor(props) {
     super(props);
-
+ 
     this.state = { activities: [] };
   }
-
+ 
   componentDidMount() {
     axios
       .get("http://localhost:5000/activities/")
@@ -29,13 +42,13 @@ export default class ActivitiesList extends Component {
         console.log(error);
       });
   }
-
+ 
   activityList() {
     return this.state.activities.map((currentActivity) => {
       return <Activity activity={currentActivity} key={currentActivity._id} />;
     });
   }
-
+ 
   render() {
     return (
       <div>
@@ -56,3 +69,5 @@ export default class ActivitiesList extends Component {
     );
   }
 }
+ 
+
